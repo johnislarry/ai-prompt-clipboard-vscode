@@ -11,6 +11,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "https://github.com/johnislarry/ai-prompt-clipboard-vscode/tree/main/images/clipboard-icon.png",
   "contributes": {
     "commands": [
       {
