@@ -1,0 +1,64 @@
+{
+  "name": "ai-prompt-clipboard-vscode",
+  "displayName": "AI Prompt Clipboard",
+  "description": "",
+  "publisher": "johnislarry",
+  "version": "0.0.37",
+  "repository": "https://github.com/johnislarry/ai-prompt-clipboard-vscode",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ai-prompt-clipboard.generatePrompt",
+        "title": "Generate AI Prompt"
+      }
+    ],
+    "configuration": {
+      "title": "AI Prompt Generator",
+      "properties": {
+        "ai-prompt-clipboard.openaiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API Key"
+        },
+        "ai-prompt-clipboard.chatGptUrl": {
+          "type": "string",
+          "default": "https://chat.openai.com/?model=gpt-4",
+          "description": "ChatGPT URL"
+        }
+      }
+    }
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "version": "npm version patch",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.78.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
